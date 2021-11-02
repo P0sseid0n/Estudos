@@ -72,9 +72,18 @@ Mostra todas as branches
     `<Nome da nova branch>` - Cria uma nova branch
     
 
-## `checkout <Nome da branch>`
+## `checkout`
 
 Muda de branch
+
+- **Opções**
+    
+    `-b <Nome da branch>` - Cria uma nova branch e alterna para ela
+    
+    `<Nome da branch>` - Muda de branch
+    
+    `<Id de um commit> -- <Nome do arquivo>` - Recupera a versão de um arquivo de um commit  
+    
 
 ## `merge <Nome da branch>`
 
@@ -91,3 +100,4 @@ Alterações no arquivo que forem comitadas serão salvas então o arquivo tera 
 ## Sites para mais referencias
 
 - [Comandos Git - Aprenda Git do básico ao avançado](https://comandosgit.github.io/)
+- [DanielHe4rt/git4noobs: Aulão de Git para iniciantes (github.com)](https://github.com/DanielHe4rt/git4noobs)
