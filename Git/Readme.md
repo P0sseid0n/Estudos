@@ -10,6 +10,15 @@ Mostra os status do git
 
 Mostra arquivos que ainda não estão sendo monitorados
 
+## `diff`
+
+Mostra todas as mudanças feitas no código
+
+- **Opções**
+    
+    `<Arquivo>`  Mostra as mudanças apenas de um arquivo
+    
+
 ## `add`
 
 Começa rastrear os arquivos
@@ -18,14 +27,18 @@ Começa rastrear os arquivos
     
     `<Nome do arquivo>` - Adiciona um arquivo
     
-    `.` - Adiciona todos or arquivos que não estão no .gitignore 
+    `.` - Rastreia todas as mudanças nos arquivos (menos os deletados) que não estão no .gitignore 
+    
+    `-u` - Rastreia todas as mudanças nos arquivos (menos nos recém criados) que não estão no .gitignore 
+    
+    `-A` - Rastreia **todas** as mudanças nos arquivos que não estão no .gitignore 
     
 
 ## `rm`
 
 - **Opções**
     
-    `--cached <Nome do arquivo>`  - Para de rastrear um arquivo
+    `--cached <Arquivo>`  - Para de rastrear um arquivo
     
 
 ## `commit`
@@ -37,11 +50,33 @@ Salva as alterações dos arquivos rastreados
     `-m "<Mensagem do comit>"` - Coloca uma mensagem na alteração
     
 
+## `reset`
+
+Volta o código no tempo apagando os commits no histórico / log
+
+- **Opções**
+    
+    `--soft` A mudanças feitas após o commit continuam e precisam ser monitoradas e comitadas
+    
+    `--hard` A mudanças feitas após o commit são apagadas
+    
+
+## `revert`
+
+Volto código no tempo sem apagar os commits no histórico  / log
+
+- **Opções**
+    
+    `--no-edit` Não abrirá o editor de texto
+    
+
 ## `remote`
 
-### `add <Nome da branch> <Url da branch>`
+- **Opções**
 
-Adiciona uma branch remota
+### `add <Nome que desejar> <Url da branch>`
+
+Salva um novo link para um repositório remoto com um nome desejado
 
 ## `show`
 
@@ -57,9 +92,18 @@ Mostra o histórico de commits
 
 Envia arquivos para a o repositório remoto
 
+- **Opções**
+    
+    `<Repositório salvo> <Branch>` Envia para o repositório remoto a branch desejada
+    
+    `<Repositório salvo> :<Branch>` Apaga a branch desejada do repositorio remoto
+    
+
 ## `pull`
 
-Pega tudo do branch remoto e atualiza **tudo** do branch local
+Pega as novas modificações do branch remoto para a branch local
+
+- **Opções**
 
 # *Branches*
 
@@ -69,7 +113,9 @@ Mostra todas as branches
 
 - **Opções**
     
-    `<Nome da nova branch>` - Cria uma nova branch
+    `<Nome da branch>` Cria uma nova branch
+    
+    `-D <Nome da branch>` Apaga a branch
     
 
 ## `checkout`
@@ -78,11 +124,13 @@ Muda de branch
 
 - **Opções**
     
-    `-b <Nome da branch>` - Cria uma nova branch e alterna para ela
+    `HEAD -- <Arquivo>`  Apaga as alterações não comitadas de um arquivo
     
-    `<Nome da branch>` - Muda de branch
+    `-b <Nome da branch>` Cria uma nova branch e alterna para ela
     
-    `<Id de um commit> -- <Nome do arquivo>` - Recupera a versão de um arquivo de um commit  
+    `<Nome da branch>` Muda de branch
+    
+    `<Id de um commit> -- <Nome do arquivo>` Recupera a versão de um arquivo de um commit  
     
 
 ## `merge <Nome da branch>`
@@ -93,11 +141,24 @@ A junção é feita entre branch **atual** (branch que será mudada) e a branch 
 
 ## Legenda
 
-### **Arquivo sendo rastreado**
+### **Arquivo sendo rastreado / trackeado / monitorado**
 
 Alterações no arquivo que forem comitadas serão salvas então o arquivo tera uma ponto salvo na linha do tempo
 
-## Sites para mais referencias
+## Referencias
 
-- [Comandos Git - Aprenda Git do básico ao avançado](https://comandosgit.github.io/)
-- [DanielHe4rt/git4noobs: Aulão de Git para iniciantes (github.com)](https://github.com/DanielHe4rt/git4noobs)
+[Curso de Git e Github COMPLETO 2021 [Iniciantes] + Desafios + Muita Prática](https://youtu.be/kB5e-gTAl_s)
+
+[Curso de Git & GitHub Para Completos Iniciantes](https://youtu.be/Yp0RRTdtkqY)
+
+[COMO USAR GIT E GITHUB NA PRÁTICA! - desde o primeiro commit até o pull request! 2/2](https://youtu.be/UBAX-13g8OM)
+
+[O QUE É GIT E GITHUB? - definição e conceitos importantes 1/2](https://youtu.be/DqTITcMq68k)
+
+[CURSO COMPLETO DE GIT (2 HORAS E 30 MINUTOS)](https://youtu.be/OuOb1_qADBQ)
+
+## Outras recomendações
+
+[Comandos Git](https://comandosgit.github.io/)
+
+[GitHub - DanielHe4rt/git4noobs: Aulão de Git para iniciantes](https://github.com/DanielHe4rt/git4noobs)
